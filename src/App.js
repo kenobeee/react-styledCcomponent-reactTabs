@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
-function App() {
+import state from './state.json';
+import Content from './Content';
+import {MainSection, MainWindow} from './MyStyledComponent'
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainSection>
+      <MainWindow>
+        <Tabs>
+
+          <TabList>
+            <Tab>List</Tab>
+            <Tab>Tiles</Tab>
+          </TabList>
+
+          <TabPanel>
+            <Content persons={state} view={'list'} />
+          </TabPanel>
+          <TabPanel>
+            <Content persons={state} view={'tiles'} />
+          </TabPanel>
+
+        </Tabs>
+      </MainWindow>
+    </MainSection>
   );
 }
-
-export default App;
