@@ -7,5 +7,5 @@
 /build
 
 # Webstorms dependencies
-.idea
-.DS
+./.idea
+.DS_STORE
