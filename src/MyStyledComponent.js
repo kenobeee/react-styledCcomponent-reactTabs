@@ -1,4 +1,29 @@
-import styled from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
+
+export const GlobalStyles = createGlobalStyle`
+  *, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    
+    width: fit-content;
+    
+    transition: .3s;
+    
+    &:hover { color: deeppink; }
+  }
+`
 
 export const MainSection = styled.section`
   display: flex;
